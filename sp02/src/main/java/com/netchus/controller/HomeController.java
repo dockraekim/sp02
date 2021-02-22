@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.netchus.api.ApiExplorer;
 import com.netchus.service.JsonDataParser;
 import com.netchus.service.MockDataParser;
 import com.netchus.service.PublicOpenAPI;
@@ -36,6 +37,14 @@ public class HomeController {
 	}
 	
 	
+	//실습 kakao map 출력
+	@RequestMapping(value = "/exkakaoMap3", method = RequestMethod.GET)
+	public String exkakaoMap3(Model model) {
+		
+		return "ex/exkakaoMap3";
+	}
+	
+	
 	//실습 kakao map 마커 출력
 	@RequestMapping(value ="/exkakaoMap2", method = RequestMethod.GET)
 	public String exkakaoMap2(Model model) {
@@ -44,16 +53,20 @@ public class HomeController {
 	}
 
 	// 실습 API Call
-	@RequestMapping(value = "/exAPI1", method = RequestMethod.GET)
-	public String exAPI1(Model model) throws Exception {
+	@RequestMapping(value = "/exapi1", method = RequestMethod.GET)
+	public String exapi1(Model model) throws Exception {
 		
-		return "ex/API1";
+		return "ex/api1";
 	}
 
 	// 실습 JSON Parsing javascript
 	@RequestMapping(value = "/exAPI2", method = RequestMethod.GET)
 	public String exAPI2(Model model) throws Exception {
 		
+		ApiExplorer apexpolorer = new ApiExplorer();
+		String result = apexpolorer.apiCall();
+		
+		model.addAttribute("list", apexpolorer.makeJsonData(result));
 		return "ex/API2";
 	}
 
