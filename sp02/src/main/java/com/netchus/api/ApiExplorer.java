@@ -23,7 +23,7 @@ public class ApiExplorer {
 		 String result = "";	
 		 StringBuilder urlBuilder = new StringBuilder("http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty"); /*URL*/
 	     try {
-			 urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=1rvEsO2%2BmIN%2B7ulCpg6rBJKhnuZlGRpl%2FQsgBoyYnKojVzu%2FiS8YYt17%2F1zBjziXC9woJBV1e7DzndwfTdOgvw%3D%3D");
+			 urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=ServiceKey");
 			/*Service Key*/
 		     urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("100", "UTF-8")); /*한 페이지 결과 수*/
 		     urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지 번호*/
